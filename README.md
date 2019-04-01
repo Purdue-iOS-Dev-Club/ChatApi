@@ -1,20 +1,42 @@
-<p align="center">
-    <img src="https://user-images.githubusercontent.com/1342803/36623515-7293b4ec-18d3-11e8-85ab-4e2f8fb38fbd.png" width="320" alt="API Template">
-    <br>
-    <br>
-    <a href="http://docs.vapor.codes/3.0/">
-        <img src="http://img.shields.io/badge/read_the-docs-2196f3.svg" alt="Documentation">
-    </a>
-    <a href="https://discord.gg/vapor">
-        <img src="https://img.shields.io/discord/431917998102675485.svg" alt="Team Chat">
-    </a>
-    <a href="LICENSE">
-        <img src="http://img.shields.io/badge/license-MIT-brightgreen.svg" alt="MIT License">
-    </a>
-    <a href="https://circleci.com/gh/vapor/api-template">
-        <img src="https://circleci.com/gh/vapor/api-template.svg?style=shield" alt="Continuous Integration">
-    </a>
-    <a href="https://swift.org">
-        <img src="http://img.shields.io/badge/swift-4.1-brightgreen.svg" alt="Swift 4.1">
-    </a>
-</p>
+# API Docs
+
+- Get messages:
+    - route: GET /messages/{id}
+    - will return an array of messages whose id is larger than the id passed throught the url
+    - to get all messages run a GET request on /messages/0
+    - example response:
+    ```json
+    [
+        {
+            "author": "person 1",
+            "id": 1,
+            "message": "message 1",
+            "sentTime": "2019-04-01T05:09:38Z"
+        },
+        {
+            "author": "person 2",
+            "id": 2,
+            "message": "message 2",
+            "sentTime": "2019-04-01T05:09:44Z"
+        },
+        {
+            "author": "person 3",
+            "id": 3,
+            "message": "message 3",
+            "sentTime": "2019-04-01T05:09:49Z"
+        }
+    ]   
+    ```
+- Send message:
+    - route: POST /messages
+    - Add json to payload in the following structure:
+    ```json
+    {
+        "author": "author name",
+        "message": "message name"
+    }
+    ```
+    - If message added succesfully then a 200 response will be send with the payload containing the message that
+    was added
+    - if the message failed to be added than a 400 response code will be returned with an appropriate error message
+    in the payload
