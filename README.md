@@ -40,3 +40,9 @@
     was added
     - if the message failed to be added than a 400 response code will be returned with an appropriate error message
     in the payload
+
+# How to run the server
+
+- Ensure you have swift installed
+- Enter project directory and run ```swift build```
+- To start the server run ```swift run```
