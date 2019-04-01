@@ -44,5 +44,8 @@
 # How to run the server
 
 - Ensure you have swift installed
+- To edit the project install the vapor cli and run ```vapor xcode```
+    - This will take a while to run
+    - It will generate an xcode project than can be opened in xcode
 - Enter project directory and run ```swift build```
 - To start the server run ```swift run```
